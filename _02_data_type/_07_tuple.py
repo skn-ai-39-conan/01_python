@@ -18,3 +18,88 @@ print(f't1: {t1} - {type(t1)}') # t1: () - <class 'tuple'>
 print(f't2: {t2} - {type(t2)}') # t2: 10 - <class 'int'>
 print(f't3: {t3} - {type(t3)}') # t3: (10,) - <class 'tuple'>
 
+
+t4 = (10, 20)
+t5 = 10, 20 # 변수는 값 하나만 저장 가능
+            # -> 자동으로 tuple 하나로 묶음
+
+print("t4 :", t4, type(t4))
+print("t5 :", t5, type(t5))
+
+print("--- tuple indexing ---")
+tpl = ('a', 'b', 'c', 'd')
+print('tpl[0] :', tpl[0])
+print('tpl[1] :', tpl[1])
+
+print("--- tuple slicing ---")
+print('tpl[0:3] :', tpl[0:3])
+
+
+""" tuple unpacking
+
+- 묶여있는 값을 푸는 방법
+
+- *튜플변수
+
+"""
+
+print("--- tuple unpacking ---")
+tpl_ = ('A',) + tpl
+print("('A',) + tpl :", tpl_)
+
+tpl_ = 'A', *tpl
+print("tpl_ = 'A', *tpl :", tpl_)
+
+# tpl 이용해서 ('A', 'b', 'c', 'd')
+tpl_ = 'A', *tpl[1:]
+print("'A', *tpl[1:] :", tpl_)
+
+
+# 튜플 활용하기
+# - 복수개의 값을 변수에 할당하기
+print("--- 복수개의 값을 변수에 할당하기 ---")
+# a = 100
+# b = 200
+# c = 300
+
+a, b, c = 100, 200, 300
+print(a, b, c)
+
+
+print("--- 값 교환 ---")
+x, y = 88, 99
+
+# 보편적인 방법
+temp = x
+x = y
+y = temp
+print(x, y) 
+
+# 튜플 이용 방법
+x, y = 100, 200
+x, y = y, x
+print("x :", x, "y :", y)
+
+
+"""  in 연산자
+- 시퀀스 타입에서 사용 가능한 연산자
+```
+찾고싶은값 in 시퀀스타입(list,tuple,str)
+```
+- in을 기준으로 왼쪽 값이 오른쪽 시퀀스에 있는지 확인
+ -> True/False
+"""
+
+address = '서울시 서초구 효령로 335'
+print('서울시' in address) # True
+print('용인시' in address) # false
+
+# 리스트
+location = ['서울', '부산', '인천', '광주', '세종']
+print('인천' in location) # True
+print('울산' in location) # false
+
+# 튜플
+names = ('김철수', '홍길동', '이미영')
+print('이미영' in names) # True
+print('김미영' in names) # False
