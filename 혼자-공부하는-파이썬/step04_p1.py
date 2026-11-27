@@ -8,16 +8,15 @@ consent = int(input())
 # TODO: 조건에 따라 결과를 정하세요.
 def chk_age(name , age, consent) -> str:
 
-    if name.strip() == "":
-        result = "이름을 입력하세요"
+    result = "이름을 입력하세요"
 
-    if 18 <= age:
-        result = "성인 입장"
-    elif age >= 13 and age < 18 and consent == 1:
-        result = "청소년 입장"
-    else:
-        result = "입장 불가"
-
+    if name.strip() != "":
+        if 18 <= age:
+            result = "성인 입장"
+        elif age >= 13 and age < 18 and consent == 1:
+            result = "청소년 입장"
+        else:
+            result = "입장 불가"
     return result
 
 # 3) 정한 안내 결과를 출력합니다.
