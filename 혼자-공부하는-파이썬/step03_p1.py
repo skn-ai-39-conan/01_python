@@ -5,12 +5,13 @@ name = input()
 # 2) 수량과 가격도 각각 읽어 보관해요.
 quantity_text = input()
 price_text = input()
-format_price_text = format(int(price_text), ",")
+total_price_tex = int(price_text) * int(quantity_text)
+format_total_price_text = format(int(total_price_tex), ",")
 #format_Price_Text = format(price_text, ',')
 # TODO: 입력값을 숫자로 바꾸고 주문 정보를 정리해 보세요.
 result = f"""이름: {name}
 수량: {quantity_text}개
-금액: {format_price_text}원
+금액: {format_total_price_text}원
 """
 # 3) 완성한 결과를 출력해요.
 print(result)
